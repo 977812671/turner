@@ -302,7 +302,7 @@ func connectTurn(target string) (*net.TCPConn, *net.TCPConn, error) {
 	}
 
 	fmt.Println("[*] Bind client ")
-	err = clientb.ConnectionBind(turn.ConnectionID(binary.BigEndian.Uint32(connid.Value)), a)
+	err = clientb.ConnectionBind(turn.ConnectionID(binary.BigEndian.Uint32(connid.Value)))
 	if err != nil {
 		fmt.Println("[x] Couldn't bind", err)
 		return c, cb, err
