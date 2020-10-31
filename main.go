@@ -316,7 +316,7 @@ func main() {
 	flag.Parse()
 
 	server := &http.Server{
-		Addr: ":8080",
+		Addr: "0.0.0.0:8080",
 		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			if r.Method == http.MethodConnect {
 				handleProxyTun(w, r)
